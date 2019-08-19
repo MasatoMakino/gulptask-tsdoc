@@ -1,1 +1,1 @@
-exports.doc = require("./index")();
+exports.doc = require("./bin").get({ baseUrl:"./dummySrc"});

@@ -1,8 +1,9 @@
 {
   "name": "gulptask-tsdoc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "tsdoc generator task for gulp.js",
-  "main": "./index.js",
+  "main": "bin/index.js",
+  "types": "bin/index.d.ts",
   "repository": "https://MasatoMakino@github.com/MasatoMakino/gulptask-tsdoc.git",
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
@@ -10,9 +11,14 @@
     "gulp": "^4.0.2",
     "gulp-replace": "^1.0.0",
     "gulp-typedoc": "^2.2.2",
-    "typedoc": "^0.14.2"
+    "typedoc": "^0.15.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "@types/node": "^12.7.2",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "build": "npx tsc --project ./tsconfig.json"
   }
 }
