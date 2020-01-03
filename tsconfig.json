@@ -6,6 +6,7 @@
     "declarationMap": true,
     "outDir": "./bin",
     "rootDir": "./src",
+    "allowSyntheticDefaultImports": true, // it needs to [import TWEEN from "@tweenjs/tween.js"]
 
     "moduleResolution": "node",
     "esModuleInterop": true
