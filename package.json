@@ -1,6 +1,6 @@
 {
   "name": "gulptask-tsdoc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "tsdoc generator task for gulp.js",
   "main": "bin/index.js",
   "types": "bin/index.d.ts",
@@ -10,12 +10,12 @@
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-replace": "^1.0.0",
-    "gulp-typedoc": "^2.2.4",
-    "typedoc": "^0.17.3"
+    "gulp-typedoc": "^2.2.5",
+    "typedoc": "^0.17.6"
   },
   "devDependencies": {
-    "@types/node": "^13.9.5",
-    "prettier": "^2.0.2",
+    "@types/node": "^13.13.4",
+    "prettier": "^2.0.5",
     "typescript": "^3.8.3"
   },
   "scripts": {
