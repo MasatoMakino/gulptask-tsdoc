@@ -12,5 +12,5 @@ export interface Option {
  * @param {Option} [option]
  * @return {Function} gulpタスク
  */
-export declare function get(option: Option): Function;
+export declare function get(option?: Option): Function;
 //# sourceMappingURL=index.d.ts.map

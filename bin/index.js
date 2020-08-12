@@ -1,13 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.get = void 0;
-const gulp_1 = require("gulp");
-const path_1 = __importDefault(require("path"));
-const gulp_replace_1 = __importDefault(require("gulp-replace"));
-const gulp_typedoc_1 = __importDefault(require("gulp-typedoc"));
+const TypeDocTask_1 = require("./TypeDocTask");
 /**
  * TypeDoc生成タスクを取得する。
  * @param {Option} [option]
@@ -15,21 +9,8 @@ const gulp_typedoc_1 = __importDefault(require("gulp-typedoc"));
  */
 function get(option) {
     option = initOption(option);
-    const { baseUrl, out } = option;
-    const docTask = () => {
-        const srcGlob = path_1.default.resolve(process.cwd(), baseUrl, "**/*.ts");
-        const option = require("../tsdocconfig");
-        option.out = out;
-        option.baseUrl = baseUrl;
-        return gulp_1.src(srcGlob).pipe(gulp_typedoc_1.default(option));
-    };
-    const replaceTask = () => {
-        const srcGlob = path_1.default.resolve(process.cwd(), out, "**/*.html");
-        return gulp_1.src(srcGlob)
-            .pipe(gulp_replace_1.default(/\/Users.*node_modules\//g, "node_modules/"))
-            .pipe(gulp_1.dest(out));
-    };
-    return gulp_1.series(docTask, replaceTask);
+    const docTask = TypeDocTask_1.getDocTask(option);
+    return docTask;
 }
 exports.get = get;
 function initOption(option) {
