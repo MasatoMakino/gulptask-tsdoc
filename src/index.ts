@@ -9,20 +9,27 @@ export interface Option {
   baseUrl?: string;
   out?: string;
 }
+
 /**
- * TypeDoc生成タスクを取得する。
- * @param {Option} [option]
- * @return {Function} gulpタスク
+ * @deprecated Use generateTask
+ * @param option
  */
 export function get(option?: Option): Function {
+  return generateTask(option);
+}
+
+/**
+ * TypeDoc生成タスクを取得する。
+ * @param option
+ */
+export function generateTask(option?: Option): Function {
   option = initOption(option);
-  const docTask = getDocTask(option);
-  return docTask;
+  return getDocTask(option);
 }
 
 function initOption(option?: Option): Option {
-  if (option == null) option = {};
-  if (option.baseUrl == null) option.baseUrl = "./src";
-  if (option.out == null) option.out = "./docs/api";
+  option ??= {};
+  option.baseUrl ??= "./src";
+  option.out ??= "./docs/api";
   return option;
 }
