@@ -8,9 +8,13 @@ export interface Option {
     out?: string;
 }
 /**
- * TypeDoc生成タスクを取得する。
- * @param {Option} [option]
- * @return {Function} gulpタスク
+ * @deprecated Use generateTask
+ * @param option
  */
 export declare function get(option?: Option): Function;
+/**
+ * TypeDoc生成タスクを取得する。
+ * @param option
+ */
+export declare function generateTask(option?: Option): Function;
 //# sourceMappingURL=index.d.ts.map
