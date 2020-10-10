@@ -1,1 +1,1 @@
-exports.doc = require("./bin").get({ baseUrl:"./dummySrc"});
+exports.doc = require("./bin").generateTask({ baseUrl:"./dummySrc"});
