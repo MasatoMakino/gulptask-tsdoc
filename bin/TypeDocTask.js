@@ -8,7 +8,6 @@ function getDocTask(option) {
             const app = new TypeDocTask.Application();
             app.bootstrap({
                 mode: "file",
-                logger: "none",
                 target: "ES5",
                 module: "CommonJS",
                 experimentalDecorators: true,
