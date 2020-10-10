@@ -8,7 +8,6 @@ export function getDocTask(option: Option): Function {
 
       app.bootstrap({
         mode: "file",
-        logger: "none",
         target: "ES5",
         module: "CommonJS",
         experimentalDecorators: true,
