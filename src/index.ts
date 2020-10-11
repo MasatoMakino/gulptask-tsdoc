@@ -8,6 +8,7 @@ import { getDocTask } from "./TypeDocTask";
 export interface Option {
   baseUrl?: string;
   out?: string;
+  ignoreCompilerErrors?:boolean
 }
 
 /**
@@ -31,5 +32,6 @@ function initOption(option?: Option): Option {
   option ??= {};
   option.baseUrl ??= "./src";
   option.out ??= "./docs/api";
+  option.ignoreCompilerErrors ??= false;
   return option;
 }
