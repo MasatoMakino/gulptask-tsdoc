@@ -6,6 +6,7 @@
 export interface Option {
     baseUrl?: string;
     out?: string;
+    ignoreCompilerErrors?: boolean;
 }
 /**
  * @deprecated Use generateTask

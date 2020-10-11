@@ -12,6 +12,7 @@ function getDocTask(option) {
                 module: "CommonJS",
                 experimentalDecorators: true,
                 exclude: ["**/*.js"],
+                ignoreCompilerErrors: option.ignoreCompilerErrors
             });
             const project = app.convert(app.expandInputFiles([option.baseUrl]));
             if (project) {
