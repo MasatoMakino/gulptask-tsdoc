@@ -22,8 +22,8 @@ exports.generateTask = generateTask;
 function initOption(option) {
     var _a, _b, _c;
     option !== null && option !== void 0 ? option : (option = {});
-    (_a = option.baseUrl) !== null && _a !== void 0 ? _a : (option.baseUrl = "./src");
+    (_a = option.baseUrl) !== null && _a !== void 0 ? _a : (option.baseUrl = "./src/index.ts");
     (_b = option.out) !== null && _b !== void 0 ? _b : (option.out = "./docs/api");
-    (_c = option.ignoreCompilerErrors) !== null && _c !== void 0 ? _c : (option.ignoreCompilerErrors = false);
+    (_c = option.tsconfig) !== null && _c !== void 0 ? _c : (option.tsconfig = "./tsconfig.json");
     return option;
 }

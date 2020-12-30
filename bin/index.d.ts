@@ -1,11 +1,22 @@
 /**
- * @typedef Option
- * @param {string} [baseUrl = "./src"]
- * @param {string} [out = "./docs/api"]
+ * @type Option
  */
 export interface Option {
+    /**
+     * @default "./src/index.ts"
+     */
     baseUrl?: string;
+    /**
+     * @default "./docs/api"
+     */
     out?: string;
+    /**
+     * @default "./tsconfig.json"
+     */
+    tsconfig?: string;
+    /**
+     * @deprecated use tsconfig option. Typedoc in ver 0.20 and later do not support "ignoreCompilerErrors" option.
+     */
     ignoreCompilerErrors?: boolean;
 }
 /**
