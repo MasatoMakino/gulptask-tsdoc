@@ -20,6 +20,9 @@ Import tasks into your `gulpfile.js`.
 ```gulpfile.js
 exports.doc = require("gulptask-tsdoc").generateTask();
 ```
+You can specify [options](https://masatomakino.github.io/gulptask-tsdoc/api/interfaces/option.html) for the generateTask function.
+
+see [API documents](https://masatomakino.github.io/gulptask-tsdoc/api/)
 
 ## License
 
