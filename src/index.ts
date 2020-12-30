@@ -1,14 +1,25 @@
 import { getDocTask } from "./TypeDocTask";
 
 /**
- * @typedef Option
- * @param {string} [baseUrl = "./src"]
- * @param {string} [out = "./docs/api"]
+ * @type Option
  */
 export interface Option {
+  /**
+   * @default "./src/index.ts"
+   */
   baseUrl?: string;
+  /**
+   * @default "./docs/api"
+   */
   out?: string;
-  ignoreCompilerErrors?:boolean
+  /**
+   * @default "./tsconfig.json"
+   */
+  tsconfig?: string;
+  /**
+   * @deprecated use tsconfig option. Typedoc in ver 0.20 and later do not support "ignoreCompilerErrors" option.
+   */
+  ignoreCompilerErrors?: boolean;
 }
 
 /**
@@ -30,8 +41,8 @@ export function generateTask(option?: Option): Function {
 
 function initOption(option?: Option): Option {
   option ??= {};
-  option.baseUrl ??= "./src";
+  option.baseUrl ??= "./src/index.ts";
   option.out ??= "./docs/api";
-  option.ignoreCompilerErrors ??= false;
+  option.tsconfig ??= "./tsconfig.json";
   return option;
 }

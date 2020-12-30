@@ -1,27 +1,20 @@
 import { Option } from "./index";
-const TypeDocTask = require("typedoc");
+const TypeDoc = require("typedoc");
 
 export function getDocTask(option: Option): Function {
-  return () => {
-    return new Promise((resolve, rejects) => {
-      const app = new TypeDocTask.Application();
-
-      app.bootstrap({
-        mode: "file",
-        target: "ES5",
-        module: "CommonJS",
-        experimentalDecorators: true,
-        exclude: ["**/*.js"],
-        ignoreCompilerErrors:option.ignoreCompilerErrors
-      });
-
-      const project = app.convert(app.expandInputFiles([option.baseUrl]));
-
-      if (project) {
-        const outputDir = option.out;
-        app.generateDocs(project, outputDir);
-        resolve();
-      }
+  return async () => {
+    const app = new TypeDoc.Application();
+    app.options.addReader(new TypeDoc.TSConfigReader());
+    app.bootstrap({
+      entryPoints: [option.baseUrl],
+      tsconfig: option.tsconfig,
+      exclude: ["**/*.js"],
     });
+
+    const project = app.convert();
+    if (project) {
+      const outputDir = option.out;
+      await app.generateDocs(project, outputDir);
+    }
   };
 }
