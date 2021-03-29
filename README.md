@@ -17,7 +17,7 @@ npm install https://github.com/MasatoMakino/gulptask-tsdoc.git --save-dev
 
 Import tasks into your `gulpfile.js`.
 
-```gulpfile.js
+```js
 exports.doc = require("gulptask-tsdoc").generateTask();
 ```
 You can specify [options](https://masatomakino.github.io/gulptask-tsdoc/api/interfaces/option.html) for the generateTask function.
